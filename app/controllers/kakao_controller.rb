@@ -15,11 +15,11 @@ class KakaoController < ApplicationController
     image = false
 
     if user_message == "로또"
-      return_text = (1..45).to_a.sample(6).to_s.short
+      return_text = (1..45).to_a.sample(6).to_s.sort
     elsif user_message == "메뉴"
       return_text = menus.sample
     elsif user_message == "고양이"
-      return_text = "고양이 없어"
+      return_text = "고양이를 선택했습니다."
       image = true
       url = "http://thecatapi.com/api/images/get?format=xml&type=jpg"
       cat_xml = RestClient.get(url)
@@ -34,22 +34,22 @@ class KakaoController < ApplicationController
     }
 
     return_message = {
-      :message => {
-          :text => return_text,
+      message: {
+          text: return_text,
           },
-      :keyboard => home_keyboard
+      keyboard: home_keyboard
     }
 
     return_message_with_img = {
-      :message => {
-        :text => return_text,
-        :photo => {
-            :url => cat_url,
-            :width => "720",
-            :height => "480"
+      message: {
+        text: return_text,
+        photo: {
+            url: cat_url,
+            width: 720,
+            height: 480
         }
-        },
-      :keyboard => home_keyboard
+      },
+      keyboard: home_keyboard
     }
 
     # 이미지가 있으면 이미지가 있는 메시지를 리턴 아니면 텍스트 메시지를 리턴
