@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   get '/keyboard' => 'kakao#keyboard'
 
   post '/message' => 'kakao#message'
-  
+  get '/message' => 'kakao#message'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
