@@ -9,7 +9,7 @@ class KakaoController < ApplicationController
 
   def message
     # 사용자가 보내준 텍스트를 그대로 말해주는 기능
-    user_message: params[:content]
+    user_message = params[:content]
 
     return_message = {
       :message => {
