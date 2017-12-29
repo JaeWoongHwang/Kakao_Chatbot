@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+gem 'nokogiri'
+gem 'rest-client'
 gem 'rails_12factor'
 gem 'pg'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
