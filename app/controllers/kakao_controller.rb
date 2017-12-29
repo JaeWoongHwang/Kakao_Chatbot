@@ -10,7 +10,7 @@ class KakaoController < ApplicationController
     # 텍스트 리턴 기능
     user_message = params[:content]
 
-    menus = {"한식 추천", "일식 추천", "중식 추천", "양식 추천", "패스트푸드 추천"}
+    menus = {"한식어때요?", "일식어때요?", "중식어때요?", "양식어때요?", "패스트푸드어때요?"}
     return_text == "임시 텍스트"
     image = false
 
@@ -19,6 +19,7 @@ class KakaoController < ApplicationController
     elsif user_message == "메뉴"
       return_text = menus.sample
     elsif user_message == "고양이"
+      return_text = "고양이 없어"
       image = true
       url = "http://thecatapi.com/api/images/get?format=xml&type=jpg"
       cat_xml = RestClient.get(url)
