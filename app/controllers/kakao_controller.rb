@@ -10,8 +10,8 @@ class KakaoController < ApplicationController
     # 텍스트 리턴 기능
     user_message = params[:content]
 
-    menus = {"한식어때요?", "일식어때요?", "중식어때요?", "양식어때요?", "패스트푸드어때요?"}
-    return_text == "임시 텍스트"
+    menus = ["한식어때요?", "일식어때요?", "중식어때요?", "양식어때요?", "패스트푸드어때요?"]
+    return_text = "임시 텍스트"
     image = false
 
     if user_message == "로또"
@@ -58,4 +58,5 @@ class KakaoController < ApplicationController
     else
     render json:return_message
     end
+  end
 end
