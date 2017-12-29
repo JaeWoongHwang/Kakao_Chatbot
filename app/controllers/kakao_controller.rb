@@ -15,7 +15,7 @@ class KakaoController < ApplicationController
     image = false
 
     if user_message == "로또"
-      return_text = (1..45).to_a.sample(6).to_s.sort
+      return_text = (1..45).to_a.sample(6).sort.to_s
     elsif user_message == "메뉴"
       return_text = menus.sample
     elsif user_message == "고양이"
